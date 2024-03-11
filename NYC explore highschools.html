@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYC Explore High Schools</title>
+  <style>
+    body {
+      font-family: monaco, monospace;  /* Monaco font as primary, monospace as fallback */
+      padding: 20px;
+      margin: 0;  /* Remove default body margin */
+    }
+    .top-bar {  /* Existing style for top bar */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background-color: #cccccc;
+      z-index: 0;
+    }
+    .left-bar {  /* New style for left bar */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;  /* Adjust width as needed */
+      height: 100vh;  /* Full viewport height */
+      background-color: #ebebeb;  /* Two shades lighter than top bar */
+      z-index: 0;
+    }
+    h1 {
+      position: absolute;
+      top: 5px; /* Adjusted to avoid overlap */
+      left: 10px; /* Adjusted to fit next to left-bar */
+      margin: 0;
+      z-index: 1;
+    }
+    span.blue {  /* Existing style for blue text */
+      color: cornflowerblue;
+    }
+    h1 span:not(.blue) {  /* New style for light green text */
+      color: darkcyan;
+    }
+    /* New styles for search bar */
+    .search-bar {
+      position: absolute;
+      top: 3px;  /* Adjust as needed */
+      right: 20px;  /* Adjust as needed */
+      width: 200px;  /* Adjust width as needed */
+      height: 30px;
+      background-color: #fff;  /* White background */
+      border: 1px solid #ccc;  /* Gray border */
+      border-radius: 5px;  /* Rounded corners */
+      padding: 5px;  /* Padding around the input */
+      display: flex;  /* Flexbox for alignment */
+    }
+    .search-bar input[type="text"] {
+      flex: 1;  /* Expands to fill remaining space */
+      border: none;  /* Remove default input border */
+    }
+    .search-bar i {  /* Search icon */
+      margin-left: 5px;  /* Spacing from text */
+      color: #ccc;  /* Gray color */
+    }
+    /* Styles for school containers */
+    .schools-container {
+      position: absolute;
+      top: 60px; /* Adjust based on your top bar height */
+      left: 220px; /* Adjust based on your left bar width */
+      right: 20px; /* Margin from the right edge */
+      bottom: 20px; /* Margin from the bottom edge */
+      overflow: auto; /* Allows scrolling within the container if content overflows */
+    }
+    .school-card {
+      background-color: #f0f0f0; /* Light grey background */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px; /* Padding inside each card */
+      margin-bottom: 20px; /* Margin between cards */
+    }
+    .school-name, .school-location {
+      margin: 5px 0; /* Vertical spacing */
+    }
+    .school-card:not(:first-child) {
+      margin-top: 20px; /* Adds space between cards, but not before the first one */
+    }
+  </style>
+</head>
+<body>
+  <div class="left-bar"></div>
+  <div class="top-bar"></div>
+  <h1><span class="blue">Explore</span> <span>NYC High Schools</span></h1>
+  <div class="search-bar">
+    <input type="text" placeholder="Search High Schools">
+    <i class="fa fa-search"></i>
+  </div>
+
+  <div class="schools-container">
+    <div class="school-card">
+      <div class="school-name">School Name 1</div>
+      <div class="school-location">Location 1</div>
+    </div>
+    <div class="school-card">
+      <div class="school-name">School Name 2</div>
+      <div class="school-location">Location 2</div>
+    </div>
+    <div class="school-card">
+      <div class="school-name">School Name 3</div>
+      <div class="school-location">Location 3</div>
+    </div>
+    <div class="school-card">
+      <div class="school-name">School Name 4</div>
+      <div class="school-location">Location 4</div>
+    </div>
+  </div>
+</body>
+</html>
